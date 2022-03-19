@@ -1,0 +1,141 @@
+/* Appel d'une police extérieure (GoogleFont) */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+/* Astuce permettant que le padding & le border ne débordent pas des boîtes permettant meilleures gestions des mesures */
+* {
+    box-sizing: border-box;
+}
+
+/* Style attribué à l'entierté de l'élèment <body>*/
+body {
+    background-image: url("https://www.tolkiendrim.com/wp-content/uploads/2017/11/appendices-s%C3%A9rie.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    font-family: 'Cinzel', serif;
+}
+
+li {
+    list-style: none;
+}
+
+/* > permet de cibler enfants directs */
+body > div {
+    text-align: center;
+}
+
+h1 {
+    display: inline-block;
+    color: whitesmoke;
+    text-shadow: 0px 0px 30px rgb(66, 57, 7);
+    font-size: 2.6em;
+    border-top: 2px solid rgb(66, 57, 7);
+    border-bottom: 2px solid rgb(66, 57, 7);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* . permet de séléctionner une classe && # de sélectionner un Id */
+.start {
+    color: whitesmoke;
+    text-shadow: 0px 0px 10px whitesmoke;
+    position: absolute;
+    bottom: 1.4em;
+    left: 40%;
+}
+
+.container {
+    margin-top: 4em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 320px;
+    width: 320px;
+    padding-top: 2.5em;
+    background-color: rgb(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border: 4px solid rgb(66, 57, 7);
+    color: black;
+}
+
+.display-score {
+    text-shadow: 0px 0px 10px whitesmoke;
+}
+
+.score ul {
+    margin: 0;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+}
+
+.invisible {
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.timeline {
+    height: 15px;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 10px whitesmoke;
+}
+
+.timeline-danger {
+    background-color: darkred;
+    box-shadow: 0px 0px 10px darkred;
+}
+
+/* RWD - Responsive Web Design
+Optimisation rapide uniquement pour petit écran 
+*/
+
+@media screen and (max-width: 500px) {
+    .container {
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    .score {
+        height: 250px;
+        width: 250px;
+        padding-top: 1.8em;
+    }
+
+    h2 {
+        font-size: inherit;
+    }
+
+    .start {
+        bottom: 7em;
+        left: 25%;
+    }
+
+    .grid {
+        margin-top: 5em;
+        height: 350px;
+        width: 350px;
+    }
+
+    /* style JS écrasé par !important malgré le script chargé */
+    img {
+        margin: 6px !important;
+        height: 75px !important;
+        width: 75px !important;
+    }
+}
